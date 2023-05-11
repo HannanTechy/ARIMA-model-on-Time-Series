@@ -25,7 +25,15 @@ X-squared = 74.364, df = 20, p-value = 3.476e-08
  arima_model <- auto.arima(diff_ts)
  
  summary(arima_model)
+Series: diff_ts 
+ARIMA(0,0,0) with zero mean 
 
+sigma^2 = 2.299:  log likelihood = -7410.83
+AIC=14823.66   AICc=14823.66   BIC=14829.97
+
+Training set error measures:
+                     ME     RMSE      MAE MPE MAPE     MASE       ACF1
+		     	
  forecast_values <- forecast(arima_model, h = 30)
  
  View(forecast_values)
