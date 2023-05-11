@@ -15,6 +15,12 @@ stock_ts <- ts(TATASTEEL.NS$TATASTEEL.NS.Close, frequency = 252)
  s<-na.approx(stock_ts)
  adf.test(s)
 diff_ts <- diff(stock_ts)
+Box.test(diff_ts, lag = 20, type = "Ljung-Box")
+
+	Box-Ljung test
+
+data:  diff_ts
+X-squared = 74.364, df = 20, p-value = 3.476e-08
  
  arima_model <- auto.arima(diff_ts)
  
